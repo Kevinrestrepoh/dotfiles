@@ -5,6 +5,8 @@ DOTFILES_DIR=~/dotfiles
 #INSTALLING
 sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle kitty alacritty firefox git zsh nautilus neovim wl-clipboard
 
+git config --global init.defaultBranch main
+
 if ! command -v yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git /yay
     cd /yay
@@ -27,7 +29,6 @@ cp -r $DOTFILES_DIR/config/Kvantum ~/.config/
 cp -r $DOTFILES_DIR/config/qt6ct ~/.config/
 cp -r $DOTFILES_DIR/config/gtk-3.0 ~/.config/
 cp -r $DOTFILES_DIR/config/nwg-look ~/.config/
-cp -r $DOTFILES_DIR/yay ~/
 
 #LOCAL
 cp -r $DOTFILES_DIR/local/share/fonts ~/.local/share/fonts/
