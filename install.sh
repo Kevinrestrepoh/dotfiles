@@ -12,7 +12,7 @@ if ! command -v yay &> /dev/null; then
     cd -
 fi
 
-yay -S --needed --noconfirm nwg-look wlogout
+yay -S --needed --noconfirm nwg-look wlogout github-cli
 
 #CONFIG
 cp -r $DOTFILES_DIR/config/hypr ~/.config/
