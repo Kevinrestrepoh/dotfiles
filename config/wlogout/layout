@@ -1,0 +1,12 @@
+{
+  "label": "poweroff",
+  "action": "systemctl poweroff",
+},
+{
+  "label": "reboot",
+  "action": "systemctl reboot",
+},
+{
+  "label": "suspend",
+  "action": "systemctl suspend",
+},

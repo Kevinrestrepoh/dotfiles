@@ -1,0 +1,11 @@
+#!/bin/bash
+# get first user (excluding 'root')
+FIRST_USER=$(grep -E ":/home/" /etc/passwd | cut -d: -f1 | head -n 1)
+
+if [[ -z $FIRST_USER ]]; then
+    echo "No valid user."
+    exit 1
+fi
+
+
+exec /usr/bin/agetty --autologin $FIRST_USER --noclear $1 $TERM
