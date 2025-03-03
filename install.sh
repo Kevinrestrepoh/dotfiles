@@ -17,10 +17,9 @@ fi
 yay -S --needed --noconfirm nwg-look wlogout github-cli
 
 #CONFIG
-cp -r $DOTFILES_DIR/config/hypr ~/.config/
 cp $DOTFILES_DIR/.zshrc ~/
+cp -r $DOTFILES_DIR/config/hypr ~/.config/
 cp -r $DOTFILES_DIR/config/kitty ~/.config/
-cp -r $DOTFILES_DIR/config/yay ~/.config/
 cp -r $DOTFILES_DIR/config/nvim ~/.config/
 cp -r $DOTFILES_DIR/config/wlogout ~/.config/
 cp -r $DOTFILES_DIR/config/ohmyposh ~/.config/
