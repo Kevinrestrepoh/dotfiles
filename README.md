@@ -24,7 +24,7 @@ First, open a terminal and run the following commands:
 sudo pacman -S git
 
 # Clone the dotfiles repository
-https://github.com/Kevinrestrepoh/dotfiles.git
+git clone https://github.com/Kevinrestrepoh/dotfiles.git ~/dotfiles
 
 # Change to the dotfiles directory
 cd ~/dotfiles
@@ -38,3 +38,4 @@ chmod +x install.sh
 # Reboot the system
 sudo reboot
 ```
+Once finished you can delete the dotfiles folder
