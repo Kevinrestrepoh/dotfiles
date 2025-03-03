@@ -3,7 +3,7 @@
 DOTFILES_DIR=~/dotfiles
 
 #INSTALLING
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle kitty alacritty firefox git zsh nautilus neovim
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle kitty alacritty firefox git zsh nautilus neovim wl-clipboard
 
 if ! command -v yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git /yay
