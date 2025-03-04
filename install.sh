@@ -14,7 +14,7 @@ if ! command -v yay &> /dev/null; then
     cd -
 fi
 
-yay -S --needed --noconfirm nwg-look wlogout github-cli
+yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh
 
 #CONFIG
 cp $DOTFILES_DIR/.zshrc ~/
