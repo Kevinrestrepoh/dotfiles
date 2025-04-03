@@ -20,7 +20,7 @@ end
 
 lspconfig.gopls.setup = {
   --on_attach = nvlsp.on_attach,
-  on_atach = function(client, bufnr)
+  on_attach = function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
     nvlsp.on_attach(client, bufnr)
@@ -35,16 +35,12 @@ lspconfig.gopls.setup = {
       completeUnimported = true,
       usePlaceholders = true,
       staticcheck = true,
+      semanticTokens = true,
       analyses = {
-        unusedparams = true
-      }
-    }
-  }
+        unusedparams = true,
+        nilness = true,
+        unusedwrite = true,
+      },
+    },
+  },
 }
-
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }

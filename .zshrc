@@ -69,3 +69,6 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+
+# paths
+export path=$home/go/bin:$path

@@ -1,19 +1,22 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
-    go = { "golines", "gofumpt", "goimports-reviser" },
-    gomod = { "gofumpt", "goimports-reviser" },
-    gowork = { "gofumpt", "goimports-reviser" },
-    gotmpl = { "gofumpt", "goimports-reviser" },
+    go = { "golines", "gofumpt", "goimports" },
+    gomod = { "gofumpt", "goimports" },
+    gowork = { "gofumpt", "goimports" },
+    gotmpl = { "gofumpt", "goimports" },
   },
 
   formatters = {
     golines = {
       command = "golines",
       args = { "--max-len=130", "--no-reformat-tags" },
-    }
+    },
+    goimports = {
+      command = "goimports",
+      args = { "-w", "$FILENAME" },
+      stdin = false,
+    },
   },
 
   format_on_save = {

@@ -1,9 +1,17 @@
-#!/bin/bash
-
 DOTFILES_DIR=~/dotfiles
 
 #INSTALLING
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle kitty alacritty firefox git zsh nautilus neovim wl-clipboard
+  #hyprland
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse 
+  #apps
+sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop
+  #tools (screenshots, bluetooth, notification, calendar)
+sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse
+  #waybar dependencies
+sudo pacman -S --needed --noconfirm network-manager-applet pavucontrol playerctl brightnessctl jq
+  #programming languages
+sudo pacman -S go && go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
+
 
 git config --global init.defaultBranch main
 
@@ -14,7 +22,7 @@ if ! command -v yay &> /dev/null; then
     cd -
 fi
 
-yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh
+yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light
 
 #CONFIG
 cp $DOTFILES_DIR/.zshrc ~/
@@ -28,6 +36,11 @@ cp -r $DOTFILES_DIR/config/Kvantum ~/.config/
 cp -r $DOTFILES_DIR/config/qt6ct ~/.config/
 cp -r $DOTFILES_DIR/config/gtk-3.0 ~/.config/
 cp -r $DOTFILES_DIR/config/nwg-look ~/.config/
+cp -r $DOTFILES_DIR/config/waybar ~/.config/
+
+chmod +x ~/.config/waybar/scripts/audio.sh
+chmod +x ~/.config/waybar/scripts/bluetooth.sh
+chmod +x ~/.config/waybar/scripts/wifi.sh
 
 #LOCAL
 cp -r $DOTFILES_DIR/local/share/fonts ~/.local/share/fonts/
@@ -51,6 +64,5 @@ sudo cp $DOTFILES_DIR/autologin/autologin.conf /etc/systemd/system/getty@tty1.se
 sudo systemctl daemon-reload
 
 cp $DOTFILES_DIR/autologin/.bash_profile ~/
-
 
 echo "completed"
