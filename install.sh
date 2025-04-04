@@ -2,7 +2,7 @@ DOTFILES_DIR=~/dotfiles
 
 #INSTALLING
   #hyprland
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse 
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse waybar
   #apps
 sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop
   #tools (screenshots, bluetooth, notification, calendar)
@@ -14,6 +14,8 @@ sudo pacman -S --needed --noconfirm go && go install golang.org/x/tools/gopls@la
 
 
 git config --global init.defaultBranch main
+
+sudo systemctl enable --now bluetooth
 
 if ! command -v yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git ~/yay

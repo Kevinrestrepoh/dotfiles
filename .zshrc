@@ -71,4 +71,4 @@ alias vim='nvim'
 alias c='clear'
 
 # paths
-export path=$home/go/bin:$path
+export PATH=$HOME/go/bin:$PATH
