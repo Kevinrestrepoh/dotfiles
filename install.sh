@@ -10,16 +10,17 @@ sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils 
   #waybar dependencies
 sudo pacman -S --needed --noconfirm network-manager-applet pavucontrol playerctl brightnessctl jq
   #programming languages
-sudo pacman -S go && go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
+sudo pacman -S --needed --noconfirm go && go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
 
 
 git config --global init.defaultBranch main
 
 if ! command -v yay &> /dev/null; then
-    git clone https://aur.archlinux.org/yay.git /yay
-    cd /yay
+    git clone https://aur.archlinux.org/yay.git ~/yay
+    cd ~/yay
     makepkg -si --noconfirm
     cd -
+    rm -rf ~/yay
 fi
 
 yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light
@@ -43,9 +44,15 @@ chmod +x ~/.config/waybar/scripts/bluetooth.sh
 chmod +x ~/.config/waybar/scripts/wifi.sh
 
 #LOCAL
+mkdir -p ~/.local/share
+mkdir -p ~/.local/share/fonts
+mkdir -p ~/.local/share/themes
+
 cp -r $DOTFILES_DIR/local/share/fonts ~/.local/share/fonts/
 cp -r $DOTFILES_DIR/local/share/themes ~/.local/share/themes/
 
+sudo mkdir -p /usr/share
+sudo mkdir -p /usr/share/themes
 cp -r $DOTFILES_DIR/local/share/themes /usr/share/themes/
 
 #PICTURES
