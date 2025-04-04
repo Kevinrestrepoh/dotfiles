@@ -56,7 +56,7 @@ sudo cp -r $DOTFILES_DIR/local/share/themes /usr/share/themes/
 if [[ ! -d ~/Pictures ]]; then
     mkdir -p ~/Pictures
 fi
-cp -r $DOTFILES_DIR/pictures ~/Pictures/
+cp -r $DOTFILES_DIR/pictures/* ~/Pictures/
 
 #AUTOLOGIN
 sudo cp $DOTFILES_DIR/autologin/autologin-first-user /usr/local/bin/
