@@ -45,15 +45,12 @@ chmod +x ~/.config/waybar/scripts/wifi.sh
 
 #LOCAL
 mkdir -p ~/.local/share
-mkdir -p ~/.local/share/fonts
-mkdir -p ~/.local/share/themes
 
 cp -r $DOTFILES_DIR/local/share/fonts ~/.local/share/fonts/
 cp -r $DOTFILES_DIR/local/share/themes ~/.local/share/themes/
 
 sudo mkdir -p /usr/share
-sudo mkdir -p /usr/share/themes
-cp -r $DOTFILES_DIR/local/share/themes /usr/share/themes/
+sudo cp -r $DOTFILES_DIR/local/share/themes /usr/share/themes/
 
 #PICTURES
 if [[ ! -d ~/Pictures ]]; then
