@@ -10,6 +10,7 @@ Ensure that you install the correct drivers for your graphics card:
 If you used `archinstall`, make sure to select the following during the setup:
 - **Profile**: Choose `xorg`
 - **Graphics**: Select your specific graphics card (NVIDIA/AMD/Intel)
+- If wifi is not working, install: sudo pacman -S networkmanager and after reboot sudo systemctl enable --now NetworkManager, then execute nmtui
 
 ---
 
