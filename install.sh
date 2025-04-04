@@ -2,7 +2,7 @@ DOTFILES_DIR=~/dotfiles
 
 #INSTALLING
   #hyprland
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse waybar
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse waybar wofi
   #apps
 sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop
   #tools (screenshots, bluetooth, notification, calendar)
