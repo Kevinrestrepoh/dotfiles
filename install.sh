@@ -53,7 +53,7 @@ cp -r $DOTFILES_DIR/local/share/fonts ~/.local/share/fonts/
 cp -r $DOTFILES_DIR/local/share/themes ~/.local/share/themes/
 
 sudo mkdir -p /usr/share
-sudo cp -r $DOTFILES_DIR/local/share/Kvantum/* /usr/share/Kvantum/
+sudo cp -r $DOTFILES_DIR/local/Kvantum/* /usr/share/Kvantum/
 sudo cp -r $DOTFILES_DIR/local/share/themes/* /usr/share/themes/
 
 #PICTURES
