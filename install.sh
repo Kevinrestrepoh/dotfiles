@@ -10,7 +10,8 @@ sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils 
   #waybar dependencies
 sudo pacman -S --needed --noconfirm network-manager-applet pavucontrol playerctl brightnessctl jq
   #programming languages
-sudo pacman -S --needed --noconfirm go && go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
+sudo pacman -S --needed --noconfirm go
+go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
 
 
 git config --global init.defaultBranch main
