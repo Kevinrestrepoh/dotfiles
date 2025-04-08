@@ -9,10 +9,6 @@ sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neo
 sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse
   #waybar dependencies
 sudo pacman -S --needed --noconfirm network-manager-applet pavucontrol playerctl brightnessctl jq
-  #programming languages
-sudo pacman -S --needed --noconfirm go
-go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
-
 
 git config --global init.defaultBranch main
 
@@ -45,6 +41,7 @@ cp -r $DOTFILES_DIR/config/waybar ~/.config/
 chmod +x ~/.config/waybar/scripts/audio.sh
 chmod +x ~/.config/waybar/scripts/bluetooth.sh
 chmod +x ~/.config/waybar/scripts/wifi.sh
+chmod +x ~/.config/waybar/scripts/calendar.sh
 
 #LOCAL
 mkdir -p ~/.local/share
@@ -72,5 +69,13 @@ sudo cp $DOTFILES_DIR/autologin/autologin.conf /etc/systemd/system/getty@tty1.se
 sudo systemctl daemon-reload
 
 cp $DOTFILES_DIR/autologin/.bash_profile ~/
+
+#programming languages
+  #go
+sudo pacman -S --needed --noconfirm go
+go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
+  #rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add rustfmt rust-analyzer
 
 echo "completed"

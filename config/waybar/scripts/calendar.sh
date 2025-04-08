@@ -1,3 +1,7 @@
+if pgrep -f 'blueman-manager' > /dev/null; then
+    pkill -f 'blueman-manager'
+fi
+
 if pgrep -f 'networkui' > /dev/null; then
     pkill -f 'networkui'
 fi
@@ -8,11 +12,7 @@ fi
 
 if pgrep -f 'kitty.*--class=calendar' > /dev/null; then
     pkill -f 'kitty.*--class=calendar'
-fi
-
-if pgrep -f 'blueman-manager' > /dev/null; then
-    pkill -f 'blueman-manager'
     exit
 fi
 
-blueman-manager
+kitty --class=calendar -e calcurse

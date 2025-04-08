@@ -6,9 +6,13 @@ if pgrep -f 'pavucontrol' > /dev/null; then
     pkill -f 'pavucontrol'
 fi
 
-if pgrep -f 'nm-connection-editor' > /dev/null; then
-    pkill -f 'nm-connection-editor'
+if pgrep -f 'kitty.*--class=calendar' > /dev/null; then
+    pkill -f 'kitty.*--class=calendar'
+fi
+
+if pgrep -f 'networkui' > /dev/null; then
+    pkill -f 'networkui'
     exit
 fi
 
-nm-connection-editor
+kitty --class=networkui -e nmtui

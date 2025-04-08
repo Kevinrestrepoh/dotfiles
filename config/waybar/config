@@ -28,7 +28,7 @@
         "exec": "date '+%a %b %d'",
         "interval": 60,
         "tooltip": false,
-        "on-click": "kitty --class=calendar -e calcurse"
+        "on-click": "~/.config/waybar/scripts/calendar.sh"
     },
     "clock": {
         "format": " {:%H:%M}",

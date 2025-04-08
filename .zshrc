@@ -72,3 +72,4 @@ alias c='clear'
 
 # paths
 export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
