@@ -25,9 +25,13 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        --go
         "gopls",
         "gofumpt",
-        "goimports-reviser",
+        "goimports",
+        --rust
+        "rust-analyzer",
+        "rustfmt",
       },
     },
   },
@@ -45,16 +49,6 @@ return {
           { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
           { section = "startup" },
         },
-      },
-      terminal = {},
-    },
-    keys = {
-      {
-        "<C-/>",
-        function()
-          Snacks.terminal()
-        end,
-        desc = "Toggle terminal",
       },
     },
   },

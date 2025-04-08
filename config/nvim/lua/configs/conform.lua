@@ -5,6 +5,7 @@ local options = {
     gomod = { "gofumpt", "goimports" },
     gowork = { "gofumpt", "goimports" },
     gotmpl = { "gofumpt", "goimports" },
+    rust = { "rustfmt" },
   },
 
   formatters = {

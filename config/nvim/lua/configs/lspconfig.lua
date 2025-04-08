@@ -18,7 +18,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.gopls.setup = {
+--go
+lspconfig.gopls.setup {
   --on_attach = nvlsp.on_attach,
   on_attach = function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
@@ -30,7 +31,7 @@ lspconfig.gopls.setup = {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-  setting = {
+  settings = {
     gopls = {
       completeUnimported = true,
       usePlaceholders = true,
@@ -40,6 +41,43 @@ lspconfig.gopls.setup = {
         unusedparams = true,
         nilness = true,
         unusedwrite = true,
+      },
+    },
+  },
+}
+
+--rust
+lspconfig.rust_analyzer.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+    nvlsp.on_attach(client, bufnr)
+  end,
+  capabilities = nvlsp.capabilities,
+  filetypes = { "rust" },
+  root_dir = util.root_pattern "Cargo.toml",
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+      },
+      inlayHints = {
+        lifetimeElisionHints = {
+          enable = true,
+          useParameterNames = true,
+        },
+        parameterHints = true,
+        typeHints = true,
+      },
+      procMacro = {
+        enable = true,
+      },
+      diagnostics = {
+        enable = true,
+        enableExperimental = true,
       },
     },
   },
