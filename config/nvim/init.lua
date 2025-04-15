@@ -13,11 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.o.shell = "/usr/bin/zsh"
-vim.o.shellcmdflag = "-i"
-
-vim.opt.expandtab = true
-
 local lazy_config = require "configs.lazy"
 
 -- load plugins

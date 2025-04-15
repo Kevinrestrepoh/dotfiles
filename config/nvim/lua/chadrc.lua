@@ -24,8 +24,9 @@ M.base46 = {
 M.ui = {
   statusline = {
     separator_style = "round",
-    order = { "mode", "file", "git", "%=", "diagnostics", "%=", "cwd" }
-  }
+    order = { "mode", "file", "git", "%=", "diagnostics", "%=", "cursor", "cwd" },
+    modules = {},
+  },
 }
 
 return M

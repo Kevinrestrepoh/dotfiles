@@ -2,9 +2,9 @@ DOTFILES_DIR=~/dotfiles
 
 #INSTALLING
   #hyprland
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse waybar wofi
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse waybar wofi rofi
   #apps
-sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop
+sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop lazygit
   #tools (screenshots, bluetooth, notification, calendar)
 sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse
   #waybar dependencies
@@ -24,6 +24,10 @@ fi
 
 yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light
 
+# tmux
+sudo pacman -S --noconfirm tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 #CONFIG
 cp $DOTFILES_DIR/.zshrc ~/
 cp -rf $DOTFILES_DIR/config/hypr ~/.config/
@@ -37,6 +41,8 @@ cp -r $DOTFILES_DIR/config/qt6ct ~/.config/
 cp -r $DOTFILES_DIR/config/gtk-3.0 ~/.config/
 cp -r $DOTFILES_DIR/config/nwg-look ~/.config/
 cp -r $DOTFILES_DIR/config/waybar ~/.config/
+cp -r $DOTFILES_DIR/config/rofi ~/.config/
+cp -r $DOTFILES_DIR/config/tmux ~/.config/
 
 chmod +x ~/.config/waybar/scripts/audio.sh
 chmod +x ~/.config/waybar/scripts/bluetooth.sh
