@@ -25,7 +25,7 @@ fi
 yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light
 
 # tmux
-sudo pacman -S --noconfirm tmux
+sudo pacman -S --noconfirm tmux fzf bat
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 #CONFIG
