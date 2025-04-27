@@ -9,6 +9,8 @@ sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neo
 sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse
   #waybar dependencies
 sudo pacman -S --needed --noconfirm network-manager-applet pavucontrol playerctl brightnessctl jq
+  #battery notification
+sudo pacman -S -needed --noconfirm inotify-tools
 
 git config --global init.defaultBranch main
 
@@ -43,11 +45,14 @@ cp -r $DOTFILES_DIR/config/nwg-look ~/.config/
 cp -r $DOTFILES_DIR/config/waybar ~/.config/
 cp -r $DOTFILES_DIR/config/rofi ~/.config/
 cp -r $DOTFILES_DIR/config/tmux ~/.config/
+cp -r $DOTFILES_DIR/config/scripts ~/.config/
 
 chmod +x ~/.config/waybar/scripts/audio.sh
 chmod +x ~/.config/waybar/scripts/bluetooth.sh
 chmod +x ~/.config/waybar/scripts/wifi.sh
 chmod +x ~/.config/waybar/scripts/calendar.sh
+
+chmod +x ~/.config/scripts/battery_notification.sh
 
 #LOCAL
 mkdir -p ~/.local/share
