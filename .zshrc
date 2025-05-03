@@ -70,6 +70,8 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 
+alias cat='bat'
+
 # paths
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH

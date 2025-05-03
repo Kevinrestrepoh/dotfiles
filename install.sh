@@ -9,8 +9,6 @@ sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neo
 sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse
   #waybar dependencies
 sudo pacman -S --needed --noconfirm network-manager-applet pavucontrol playerctl brightnessctl jq
-  #battery notification
-sudo pacman -S -needed --noconfirm inotify-tools
 
 git config --global init.defaultBranch main
 
@@ -24,7 +22,7 @@ if ! command -v yay &> /dev/null; then
     rm -rf ~/yay
 fi
 
-yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light
+yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light lazydocker
 
 # tmux
 sudo pacman -S --noconfirm tmux fzf bat
@@ -80,6 +78,10 @@ sudo cp $DOTFILES_DIR/autologin/autologin.conf /etc/systemd/system/getty@tty1.se
 sudo systemctl daemon-reload
 
 cp $DOTFILES_DIR/autologin/.bash_profile ~/
+cp $DOTFILES_DIR/autologin/.zprofile ~/
+
+# Making zsh default shell
+chsh -s $(which zsh)
 
 #programming languages
   #go
@@ -89,4 +91,4 @@ go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup component add rustfmt rust-analyzer
 
-echo "completed"
+echo "completed, now reboot"
