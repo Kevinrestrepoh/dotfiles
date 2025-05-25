@@ -2,10 +2,14 @@
     "layer": "top",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-left": ["custom/notification", "custom/date", "clock"],
+    "modules-left": ["custom/notification", "custom/date", "clock", "tray"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["wireplumber", "backlight", "bluetooth", "network", "battery"],
-
+    
+    "tray": {
+      "icon-size": 16,
+      "spacing": 10
+    },
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {

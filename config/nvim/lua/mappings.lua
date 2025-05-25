@@ -9,8 +9,6 @@ map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-map("i", "<Tab>", "<Tab>", { desc = "Insert tab", noremap = true, silent = true })
-
 -- vim tmux navigator
 map("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>")
 map("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>")

@@ -15,6 +15,11 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.relativenumber = true
 
+vim.opt.smarttab = true
+
+vim.opt.wrap = true
+vim.opt.breakindent = true
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
