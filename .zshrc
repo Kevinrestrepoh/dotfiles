@@ -72,6 +72,15 @@ alias c='clear'
 
 alias cat='bat'
 
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gpl='git pull'
+alias gb='git branch'
+alias gi='git init'
+alias gcl='git clone'
+
 # paths
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
