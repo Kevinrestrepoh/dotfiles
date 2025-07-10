@@ -22,7 +22,7 @@ if ! command -v yay &> /dev/null; then
     rm -rf ~/yay
 fi
 
-yay -S --needed --noconfirm nwg-look wlogout github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light lazydocker
+yay -S --needed --noconfirm nwg-look github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light lazydocker
 
 # tmux
 sudo pacman -S --noconfirm tmux fzf bat
@@ -33,7 +33,6 @@ cp $DOTFILES_DIR/.zshrc ~/
 cp -rf $DOTFILES_DIR/config/hypr ~/.config/
 cp -r $DOTFILES_DIR/config/kitty ~/.config/
 cp -r $DOTFILES_DIR/config/nvim ~/.config/
-cp -r $DOTFILES_DIR/config/wlogout ~/.config/
 cp -r $DOTFILES_DIR/config/ohmyposh ~/.config/
 cp -r $DOTFILES_DIR/config/alacritty ~/.config/
 cp -r $DOTFILES_DIR/config/Kvantum ~/.config/
@@ -44,6 +43,7 @@ cp -r $DOTFILES_DIR/config/waybar ~/.config/
 cp -r $DOTFILES_DIR/config/rofi ~/.config/
 cp -r $DOTFILES_DIR/config/tmux ~/.config/
 cp -r $DOTFILES_DIR/config/scripts ~/.config/
+cp -r $DOTFILES_DIR/config/themes ~/.config/
 
 chmod +x ~/.config/waybar/scripts/audio.sh
 chmod +x ~/.config/waybar/scripts/bluetooth.sh
@@ -51,6 +51,9 @@ chmod +x ~/.config/waybar/scripts/wifi.sh
 chmod +x ~/.config/waybar/scripts/calendar.sh
 
 chmod +x ~/.config/scripts/battery_notification.sh
+chmod +x ~/.config/scripts/change-theme.sh
+chmod +x ~/.config/scripts/powermenu.sh
+chmod +x ~/.config/scripts/theme-selector.sh
 
 #LOCAL
 mkdir -p ~/.local/share
@@ -63,9 +66,7 @@ sudo cp -r $DOTFILES_DIR/local/Kvantum/* /usr/share/Kvantum/
 sudo cp -r $DOTFILES_DIR/local/share/themes/* /usr/share/themes/
 
 #PICTURES
-if [[ ! -d ~/Pictures ]]; then
-    mkdir -p ~/Pictures
-fi
+mkdir -p ~/Pictures
 cp -r $DOTFILES_DIR/pictures/* ~/Pictures/
 
 #AUTOLOGIN

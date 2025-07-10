@@ -1,0 +1,84 @@
+configuration {
+    modi: "window,run,drun";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "󰍉";
+    display-run: "";
+    display-window: "";
+    drun-display-format: "{icon} {name}";
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #1e1e2e;
+    bg-alt: #181825;
+    fg: #cdd6f4;
+    fg-alt: #787c99;
+    accent: #cba6f7;
+
+    background-color: @bg;
+    
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    border: 1;
+    border-color: @accent;
+    border-radius: 12px;
+    width: 45%;
+    padding: 15;
+}
+
+inputbar {
+    children: [prompt, entry];
+    padding: 4;
+    spacing: 8;
+    background-color: @bg-alt;
+    border-radius: 12px;
+}
+
+prompt {
+    text-color: @accent;
+    background-color: rgba(137, 180, 250, 0);
+    padding: 4;
+    margin: 0 0 0 8;
+    vertical-align: 0.5;
+    border-radius: 12px;
+    font: "JetBrainsMono Nerd Font 18";
+}
+
+entry {
+    padding: 8;
+    placeholder: "";
+    text-color: @fg;
+    background-color: @bg-alt;
+}
+
+listview {
+    background-color: @bg;
+    columns: 1;
+    lines: 8;
+}
+
+element {
+    padding: 12px;
+    text-color: @fg-alt;
+    border-radius: 6px;
+}
+
+element selected {
+    text-color: @accent;
+}
+
+element-icon {
+    size: 1.2em;
+}
+
+element-text {
+    text-color: inherit;
+}

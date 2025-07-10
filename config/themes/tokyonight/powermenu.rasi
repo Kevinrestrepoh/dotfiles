@@ -1,0 +1,62 @@
+configuration {
+  location: 6;
+  anchor: center;
+  fullscreen: false;
+  fixed-num-lines: true;
+  font: "JetBrainsMono Nerd Font 20";
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #1a1b26;
+    bg-alt: #16161e;
+    fg: #c0caf5;
+    fg-alt: #565f89;
+    accent: #7aa2f7;
+
+    background-color: @bg;
+    
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    border: 1;
+    border-color: @accent;
+    border-radius: 12px;
+    width: 14%;
+    height: 60px;
+    y-offset: -10px;
+}
+
+mainbox {
+    spacing: 0;
+    children: [listview];
+}
+
+listview {
+    layout: horizontal;
+    fixed-columns: true;
+    spacing: 0;
+}
+
+element {
+    padding: 10px 19px;
+    background-color: @bg;
+    text-color: @fg;
+    cursor: pointer;
+}
+
+element selected {
+    text-color: @accent;
+}
+
+element-text {
+    font: inherit;
+    text-color: inherit;
+    horizontal-align: center;
+    vertical-align: 0.5;
+}

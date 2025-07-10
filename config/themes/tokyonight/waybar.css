@@ -1,0 +1,91 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#workspaces button {
+    color: rgba(169, 177, 214, 0.4);
+    padding: 0 5px;
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+}
+
+#clock {
+    color: #c0caf5;
+    padding: 0 10px;
+}
+
+#custom-date {
+  padding: 0 8px;
+  border-radius: 6px;
+  background: #bb9af7;
+  color: #1a1b26;
+}
+
+#custom-notification, #network, #bluetooth, #battery, #wireplumber, #backlight {
+    padding: 0 8px;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+#custom-notification {
+  margin-right: 6px;
+  padding-right: 10px;
+  background: #e0af68;
+  color: #1a1b26;
+}
+
+#network {
+  background: #7aa2f7;
+  margin-left: 8px;
+}
+
+#bluetooth {
+  background: #7dcfff;
+  font-size: 18px;
+  margin-left: 8px
+}
+
+#battery {
+  background: #9ece6a;
+  margin-left: 8px;
+  color: #2b2d42;
+}
+
+#backlight {
+  background: #bb9af7;
+  margin-left: 8px;
+}
+
+#wireplumber {
+  background: #f7768e;
+}
+
+#battery.critical {
+    color: #f7768e;
+}
+
+.modules-left, .modules-center, .modules-right {
+    background: rgba(26, 27, 38, 0.8);
+    border-radius: 8px;
+    padding: 7px;
+}
+
+.modules-left {
+    margin: 6px 0 0px 5px;
+}
+
+.modules-center {
+    margin: 6px 0 0px 0;
+}
+
+.modules-right {
+    margin: 6px 5px 0px 0;
+}
