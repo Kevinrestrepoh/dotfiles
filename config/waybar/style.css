@@ -1,88 +1,96 @@
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 15px;
-    font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
+  font-weight: bold;
 }
 
 window#waybar {
-    background: transparent;
+  background: transparent;
 }
 
 #workspaces button {
-    color: #9399b2;
-    padding: 0 5px;
+  color: #9399b2;
+  padding: 0 5px;
+  margin: 0 5px;
 }
 
 #workspaces button.active {
-    color: #ffffff;
+  color: #ffffff;
+  background: #ffffff;
+  min-width: 32px;
+  border-radius: 999px;
 }
 
-#custom-date-clock, 
-#custom-notification, 
-#network, 
-#bluetooth, 
-#battery, 
-#wireplumber, 
+#custom-date-clock,
+#custom-notification,
+#network,
+#bluetooth,
+#battery,
+#wireplumber,
 #backlight {
-    padding: 0 10px;
-    background: transparent;
-    border: none;
+  padding: 0 10px;
+  background: transparent;
+  border: none;
 }
 
 #custom-date-clock {
-    background: rgba(30, 30, 46, 0.7);
-    color: #f9e2af;
-    border-radius: 12px;
-    padding: 7px 10px 7px 16px;
-    margin: 6px 5px;
+  background: rgba(30, 30, 46, 0.7);
+  color: #f9e2af;
+  border-radius: 12px;
+  padding: 7px 10px 7px 16px;
+  margin: 6px 5px;
 }
 
 #custom-notification {
-    background: rgba(30, 30, 46, 0.7);
-    color: #fab387;
-    border-radius: 12px;
-    padding: 7px 14px 7px 12px;
-    margin: 6px 5px;
+  background: rgba(30, 30, 46, 0.7);
+  color: #fab387;
+  border-radius: 12px;
+  padding: 7px 14px 7px 12px;
+  margin: 6px 5px;
 }
 
 #network {
-    color: #89b4fa;
+  color: #89b4fa;
 }
 
 #network.disconnected {
-    color: #f38ba8;
-    font-size: 18px;
+  color: #f38ba8;
+  font-size: 18px;
 }
 
 #bluetooth {
-    color: #74c7ec;
-    font-size: 18px;
+  color: #74c7ec;
+  font-size: 18px;
 }
 
 #battery {
-    color: #a6e3a1;
+  color: #a6e3a1;
 }
+
 #battery.critical {
-    color: #f38ba8;
+  color: #f38ba8;
 }
 
 #backlight {
-    color: #cdd6f4;
+  color: #cdd6f4;
 }
 
 #wireplumber {
-    color: #f5c2e7;
-}
-#wireplumber.muted {
-    color: #f38ba8;
-    font-size: 18px;
+  color: #f5c2e7;
 }
 
-.modules-left, .modules-center, .modules-right {
-    background: rgba(30, 30, 46, 0.7);
-    border-radius: 12px;
-    padding: 7px;
-    margin: 6px 5px;
+#wireplumber.muted {
+  color: #f38ba8;
+  font-size: 18px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: rgba(30, 30, 46, 0.7);
+  border-radius: 12px;
+  padding: 7px;
+  margin: 6px 5px;
 }
 
 .modules-left {
@@ -91,4 +99,3 @@ window#waybar {
   padding: 0px;
   margin: 0px;
 }
-

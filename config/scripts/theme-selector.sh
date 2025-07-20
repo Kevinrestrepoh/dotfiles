@@ -13,16 +13,20 @@ case $OPTION in
         ;;
     "Wallpapers")
         WALLPAPER=$(
-            find ~/Pictures/wallpapers -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | while read -r img; do
-                echo -en "$img\x00icon\x1f$img\n"
-            done | rofi -dmenu -show-icons -theme ~/.config/rofi/wallpaper-selector.rasi -selected-row 0
+            while IFS= read -r img; do
+                echo -en "$(basename "$img")\x00icon\x1f$img\n"
+            done < <(find ~/Pictures/wallpapers -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \)) | 
+            rofi -dmenu -show-icons -theme ~/.config/rofi/wallpaper-selector.rasi -selected-row 0
         )
 
         if [ -n "$WALLPAPER" ]; then
-            killall hyprpaper 2>/dev/null
-            echo "preload = $WALLPAPER" > ~/.config/hypr/hyprpaper.conf
-            echo "wallpaper = ,$WALLPAPER" >> ~/.config/hypr/hyprpaper.conf
-            hyprpaper &
+            FULL_PATH=$(find ~/Pictures/wallpapers -name "$WALLPAPER" -print -quit)
+            if [ -n "$FULL_PATH" ]; then
+                killall hyprpaper 2>/dev/null
+                echo "preload = $FULL_PATH" > ~/.config/hypr/hyprpaper.conf
+                echo "wallpaper = ,$FULL_PATH" >> ~/.config/hypr/hyprpaper.conf
+                hyprpaper &
+            fi
         fi
         ;;
 esac

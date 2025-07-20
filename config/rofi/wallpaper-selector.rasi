@@ -46,6 +46,7 @@ element {
     border: 1;
     border-color: @fg-alt;
     border-radius: 6px;
+    orientation: vertical;
 }
 
 element selected {
@@ -62,6 +63,5 @@ element-icon {
 }
 
 element-text {
-    display: none;
     text-color: @fg;
 }
