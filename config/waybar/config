@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-left": ["custom/notification", "custom/date", "clock", "tray"],
+    "modules-left": ["custom/notification", "custom/date-clock", "tray"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["wireplumber", "backlight", "bluetooth", "network", "battery"],
     
@@ -17,9 +17,6 @@
             "default": "",
             "empty": ""
         },
-        "persistent-workspaces": {
-            "*": [1, 2, 3, 4, 5]
-        }
     },
     "custom/notification": {
         "tooltip": false,
@@ -27,9 +24,9 @@
         "on-click": "swaync-client -t -sw",
         "escape": true
     },
-    "custom/date": {
-        "format": " {}",
-        "exec": "date '+%a %b %d'",
+    "custom/date-clock": {
+        "format": " {}  {}",
+        "exec": "echo \"$(date '+%a %b %d')\" \"$(date '+%H:%M')\"",
         "interval": 60,
         "tooltip": false,
         "on-click": "~/.config/waybar/scripts/calendar.sh"

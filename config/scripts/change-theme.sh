@@ -15,23 +15,7 @@ cp "$THEME_DIR/kitty.conf" "$HOME/.config/kitty/kitty-style.conf"
 
 # Nvim
 CHADRC="$HOME/.config/nvim/lua/chadrc.lua"
-
-NVIM_SOCKET=$(ls /run/user/$(id -u)/nvim.*.0 2>/dev/null | head -n 1)
-
-if [ -n "$NVIM_SOCKET" ]; then
-  nvim --server "$NVIM_SOCKET" --remote-send \
-    ":silent! edit $CHADRC | %s/theme = \".*\"/theme = \"$THEME\"/ | w<CR>"
-
-  sleep 0.1
-
-  nvim --server "$NVIM_SOCKET" --remote-send \
-    ":luafile ~/.config/nvim/lua/chadrc.lua<CR>"
-
-  nvim --server "$NVIM_SOCKET" --remote-send \
-    ":lua require('base46').load_all_highlights()<CR>"
-else
-  nvim --headless "$CHADRC" +"%s/theme = \".*\"/theme = \"$THEME\"/" +wq
-fi
+nvim --headless "$CHADRC" +"%s/theme = \".*\"/theme = \"$THEME\"/" +wq
 
 hyprctl reload
 waybar --reload-css
