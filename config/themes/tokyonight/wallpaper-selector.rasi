@@ -11,17 +11,10 @@ configuration {
     fg-alt: #565f89;
     accent: #7aa2f7;
 
-    background-color: @bg;
-    
-    border: 0;
-    margin: 0;
-    padding: 0;
-    spacing: 0;
+    background-color: @bg-alt;
 }
 
 window {
-    border: 1;
-    border-color: @accent;
     border-radius: 12px;
     width: 60%;
     height: 70%;

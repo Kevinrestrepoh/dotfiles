@@ -11,17 +11,10 @@ configuration {
     fg-alt: #787c99;
     accent: #cba6f7;
 
-    background-color: @bg;
-    
-    border: 0;
-    margin: 0;
-    padding: 0;
-    spacing: 0;
+    background-color: @bg-alt;
 }
 
 window {
-    border: 1;
-    border-color: @accent;
     border-radius: 12px;
     width: 45%;
     height: 30%;
@@ -32,36 +25,21 @@ inputbar {
     enabled: false;
 }
 
-prompt {
-    text-color: @accent;
-    background-color: rgba(137, 180, 250, 0);
-    padding: 4;
-    margin: 0 0 0 8;
-    vertical-align: 0.5;
-    border-radius: 12px;
-}
-
-entry {
-    padding: 8;
-    placeholder: "";
-    text-color: @fg;
-    background-color: @bg-alt;
-}
-
 listview {
-    background-color: @bg;
+    background-color: transparent;
     columns: 1;
     lines: 8;
 }
 
 element {
+    background-color: transparent;
     padding: 12px;
     text-color: @fg-alt;
-    border-radius: 6px;
 }
 
 element selected {
-    text-color: @accent;
+    background-color: @accent;
+    text-color: @bg;
 }
 
 element-icon {
@@ -69,5 +47,6 @@ element-icon {
 }
 
 element-text {
+    background-color: transparent;
     text-color: inherit;
 }

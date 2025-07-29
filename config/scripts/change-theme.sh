@@ -9,6 +9,7 @@ cp "$THEME_DIR/waybar-config" "$HOME/.config/waybar/config"
 cp "$THEME_DIR/config.rasi" "$HOME/.config/rofi/config.rasi"
 cp "$THEME_DIR/theme-selector.rasi" "$HOME/.config/rofi/theme-selector.rasi"
 cp "$THEME_DIR/powermenu.rasi" "$HOME/.config/rofi/powermenu.rasi"
+cp "$THEME_DIR/wallpaper-selector.rasi" "$HOME/.config/rofi/wallpaper-selector.rasi"
 
 # Kitty
 cp "$THEME_DIR/kitty.conf" "$HOME/.config/kitty/kitty-style.conf"

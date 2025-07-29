@@ -26,6 +26,19 @@ case $OPTION in
                 echo "preload = $FULL_PATH" > ~/.config/hypr/hyprpaper.conf
                 echo "wallpaper = ,$FULL_PATH" >> ~/.config/hypr/hyprpaper.conf
                 hyprpaper &
+
+                HYPRLOCK_CONF=~/.config/hypr/hyprlock.conf
+                TMP_FILE=$(mktemp)
+                awk -v wallpaper="$WALLPAPER" '
+                    /^background {/ {in_background=1}
+                    in_background && /path = / {
+                        print "    path = " wallpaper
+                        next
+                    }
+                    in_background && /}/ {in_background=0}
+                    {print}
+                ' "$HYPRLOCK_CONF" > "$TMP_FILE"
+                mv "$TMP_FILE" "$HYPRLOCK_CONF"
             fi
         fi
         ;;
