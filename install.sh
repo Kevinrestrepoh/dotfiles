@@ -4,7 +4,7 @@ DOTFILES_DIR=~/dotfiles
   #hyprland
 sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewire pipewire-pulse waybar wofi rofi
   #apps
-sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop lazygit
+sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop lazygit spotify-launcher cava
   #tools (screenshots, bluetooth, notification, calendar)
 sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse
   #waybar dependencies
