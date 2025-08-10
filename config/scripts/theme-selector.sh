@@ -29,7 +29,7 @@ case $OPTION in
 
                 HYPRLOCK_CONF=~/.config/hypr/hyprlock.conf
                 TMP_FILE=$(mktemp)
-                awk -v wallpaper="$WALLPAPER" '
+                awk -v wallpaper="$FULL_PATH" '
                     /^background {/ {in_background=1}
                     in_background && /path = / {
                         print "    path = " wallpaper
