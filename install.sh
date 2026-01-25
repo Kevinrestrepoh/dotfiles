@@ -30,7 +30,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 #CONFIG
 cp $DOTFILES_DIR/.zshrc ~/
-cp -rf $DOTFILES_DIR/config/hypr ~/.config/
+cp -r $DOTFILES_DIR/config/hypr ~/.config/
 cp -r $DOTFILES_DIR/config/kitty ~/.config/
 cp -r $DOTFILES_DIR/config/nvim ~/.config/
 cp -r $DOTFILES_DIR/config/ohmyposh ~/.config/

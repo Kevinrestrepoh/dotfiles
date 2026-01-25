@@ -23,8 +23,14 @@ case $OPTION in
             FULL_PATH=$(find ~/Pictures/wallpapers -name "$WALLPAPER" -print -quit)
             if [ -n "$FULL_PATH" ]; then
                 killall hyprpaper 2>/dev/null
-                echo "preload = $FULL_PATH" > ~/.config/hypr/hyprpaper.conf
-                echo "wallpaper = ,$FULL_PATH" >> ~/.config/hypr/hyprpaper.conf
+                cat > ~/.config/hypr/hyprpaper.conf <<EOF
+splash = false
+
+wallpaper {
+    monitor = eDP-1
+    path = $FULL_PATH
+  }
+EOF
                 hyprpaper &
 
                 HYPRLOCK_CONF=~/.config/hypr/hyprlock.conf
