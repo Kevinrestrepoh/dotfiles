@@ -15,6 +15,7 @@ git config --global init.defaultBranch main
 sudo systemctl enable --now bluetooth
 
 if ! command -v yay &> /dev/null; then
+    sudo pacman -S --needed --noconfirm base-devel binutils
     git clone https://aur.archlinux.org/yay.git ~/yay
     cd ~/yay
     makepkg -si --noconfirm
