@@ -1,9 +1,5 @@
 configuration {
-  location: 6;
-  anchor: center;
-  fullscreen: false;
-  fixed-num-lines: true;
-  font: "JetBrainsMono Nerd Font 20";
+  font: "JetBrainsMono Nerd Font 14";
 }
 
 @theme "/dev/null"
@@ -27,9 +23,7 @@ window {
     border: 1;
     border-color: @accent;
     border-radius: 12px;
-    width: 14%;
-    height: 60px;
-    y-offset: -10px;
+    width: 15%;
 }
 
 mainbox {
@@ -38,9 +32,11 @@ mainbox {
 }
 
 listview {
-    layout: horizontal;
-    columns: 3;
-    spacing: 12px;
+    layout: vertical;
+    columns: 1;
+    lines: 4;
+    spacing: 10px;
+    padding: 10px;
 }
 
 element {

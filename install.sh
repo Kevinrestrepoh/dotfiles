@@ -59,6 +59,9 @@ chmod +x ~/.config/scripts/battery_notification.sh
 chmod +x ~/.config/scripts/change-theme.sh
 chmod +x ~/.config/scripts/powermenu.sh
 chmod +x ~/.config/scripts/theme-selector.sh
+chmod +x ~/.config/scripts/options.sh
+chmod +x ~/.config/scripts/options/battery.sh
+chmod +x ~/.config/scripts/options/monitor.sh
 
 #LOCAL
 mkdir -p ~/.local/share
