@@ -6,7 +6,7 @@ sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprlock hypridle pipewir
   #apps
 sudo pacman -S --needed --noconfirm kitty alacritty firefox git zsh nautilus neovim wl-clipboard btop lazygit spotify-launcher cava
   #tools (screenshots, bluetooth, notification, calendar)
-sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse
+sudo pacman -S --needed --noconfirm swappy grim slurp blueman bluez bluez-utils swaync calcurse power-profiles-daemon
   #waybar dependencies
 sudo pacman -S --needed --noconfirm network-manager-applet pavucontrol playerctl brightnessctl jq
 
