@@ -86,7 +86,7 @@ window#waybar {
 
 .modules-left,
 .modules-center,
-.modules-right {
+.modules-right, #tray {
   background: rgba(30, 30, 46, 0.7);
   border-radius: 12px;
   padding: 7px;

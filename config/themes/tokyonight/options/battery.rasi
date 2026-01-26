@@ -5,20 +5,20 @@ configuration {
 @theme "/dev/null"
 
 * {
-    bg: #1e1e2e;
-    bg-alt: #181825;
-    fg: #cdd6f4;
-    fg-alt: #787c99;
-    accent: #cba6f7;
+    bg: #1a1b26;
+    bg-alt: #16161e;
+    fg: #c0caf5;
+    fg-alt: #565f89;
+    accent: #7aa2f7;
 
-    background-color: @bg;
+    background-color: @bg-alt;
 }
 
 window {
     border: 1;
     border-color: @accent;
     border-radius: 12px;
-    width: 10%;
+    width: 15%;
 }
 
 mainbox {
@@ -29,13 +29,14 @@ mainbox {
 listview {
     layout: vertical;
     columns: 1;
-    lines: 2;
+    lines: 3;
     spacing: 10px;
     padding: 10px;
 }
 
 element {
     padding: 10px 20px;
+    background-color: @bg;
     text-color: @fg;
     cursor: pointer;
 }

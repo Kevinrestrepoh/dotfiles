@@ -5,13 +5,13 @@ configuration {
 @theme "/dev/null"
 
 * {
-    bg: #1e1e2e;
-    bg-alt: #181825;
-    fg: #cdd6f4;
-    fg-alt: #787c99;
-    accent: #cba6f7;
+    bg: #1a1b26;
+    bg-alt: #16161e;
+    fg: #c0caf5;
+    fg-alt: #565f89;
+    accent: #7aa2f7;
 
-    background-color: @bg;
+    background-color: @bg-alt;
 }
 
 window {

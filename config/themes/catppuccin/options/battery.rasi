@@ -18,7 +18,7 @@ window {
     border: 1;
     border-color: @accent;
     border-radius: 12px;
-    width: 10%;
+    width: 15%;
 }
 
 mainbox {
@@ -29,13 +29,14 @@ mainbox {
 listview {
     layout: vertical;
     columns: 1;
-    lines: 2;
+    lines: 3;
     spacing: 10px;
     padding: 10px;
 }
 
 element {
     padding: 10px 20px;
+    background-color: @bg;
     text-color: @fg;
     cursor: pointer;
 }
