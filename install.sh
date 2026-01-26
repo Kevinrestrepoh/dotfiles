@@ -29,6 +29,10 @@ yay -S --needed --noconfirm nwg-look github-cli oh-my-posh xdg-desktop-portal-hy
 sudo pacman -S --noconfirm tmux fzf bat
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# TS nvim
+sudo pacman -S --noconfirm nodejs npm
+sudo npm install -g tree-sitter-cli
+
 #CONFIG
 cp $DOTFILES_DIR/.zshrc ~/
 cp -r $DOTFILES_DIR/config/hypr ~/.config/
@@ -88,7 +92,10 @@ chsh -s $(which zsh)
 #programming languages
   #go
 sudo pacman -S --needed --noconfirm go
-go install golang.org/x/tools/gopls@latest mvdan.cc/gofumpt@latest golang.org/x/tools/cmd/goimports@latest github.com/segmentio/golines@latest
+go install golang.org/x/tools/gopls@latest 
+go install mvdan.cc/gofumpt@latest 
+go install golang.org/x/tools/cmd/goimports@latest 
+go install github.com/segmentio/golines@latest
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
   #rust

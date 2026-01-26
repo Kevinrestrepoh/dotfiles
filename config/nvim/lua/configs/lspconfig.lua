@@ -1,36 +1,14 @@
 -- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
+local nvlsp = require("nvchad.configs.lspconfig")
+nvlsp.defaults() 
 
-local lspconfig = require "lspconfig"
-
--- EXAMPLE
-local servers = { "html", "cssls", "gopls" }
-local nvlsp = require "nvchad.configs.lspconfig"
-
-local util = require "lspconfig.util"
-
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
+local util = require("lspconfig.util")
 
 --go
-lspconfig.gopls.setup {
-  --on_attach = nvlsp.on_attach,
-  on_attach = function(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-    nvlsp.on_attach(client, bufnr)
-  end,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
+vim.lsp.config("gopls", {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  root_markers = { "go.mod", ".git" },
   settings = {
     gopls = {
       completeUnimported = true,
@@ -42,28 +20,23 @@ lspconfig.gopls.setup {
         nilness = true,
         unusedwrite = true,
       },
-    },
-  },
-}
+
+    }
+  }
+})
+vim.lsp.enable("gopls")
 
 --rust
-lspconfig.rust_analyzer.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-    nvlsp.on_attach(client, bufnr)
-  end,
-  capabilities = nvlsp.capabilities,
+vim.lsp.config("rust_analyzer", {
+  cmd = { "rust-analyzer" },
   filetypes = { "rust" },
-  root_dir = util.root_pattern "Cargo.toml",
+  root_markers = { "Cargo.toml", ".git" },
   settings = {
     ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,
       },
-      checkOnSave = {
-        command = "clippy",
-      },
+      checkOnSave = true, 
       inlayHints = {
         lifetimeElisionHints = {
           enable = true,
@@ -81,4 +54,19 @@ lspconfig.rust_analyzer.setup {
       },
     },
   },
+})
+vim.lsp.enable("rust_analyzer")
+
+--
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client.name == "gopls" or client.name == "rust_analyzer" then
+      -- Disable formatting if you handle it with null-ls or other formatter
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+      -- Apply NvChad's default on_attach
+      nvlsp.on_attach(client, args.buf)
+    end
+  end,
 }
