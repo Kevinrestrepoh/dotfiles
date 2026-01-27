@@ -1,0 +1,48 @@
+configuration {
+  location: 6;
+  anchor: center;
+  fullscreen: false;
+  fixed-num-lines: true;
+  font: "JetBrainsMono Nerd Font 20";
+}
+
+@theme "/dev/null"
+@import "colors.rasi"
+
+window {
+    border-radius: 12px;
+    width: 14%;
+    height: 60px;
+    y-offset: -10px;
+}
+
+mainbox {
+    spacing: 0;
+    children: [listview];
+}
+
+listview {
+    background-color: transparent;
+    layout: horizontal;
+    fixed-columns: true;
+    spacing: 2%;
+}
+
+element {
+    background-color: transparent;
+    padding: 10px;
+    text-color: @fg;
+    cursor: pointer;
+}
+
+element selected {
+    text-color: @accent;
+}
+
+element-text {
+    background-color: transparent;
+    font: inherit;
+    text-color: inherit;
+    horizontal-align: center;
+    vertical-align: 0.5;
+}

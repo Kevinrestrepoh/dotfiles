@@ -1,0 +1,68 @@
+configuration {
+    modi: "drun";
+    show-icons: false;
+    display-drun: "󰍉";
+    drun-display-format: "{icon} {name}";
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+@theme "/dev/null"
+@import "colors.rasi"
+
+window {
+    border-radius: 12px;
+    width: 45%;
+    padding: 15px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    padding: 4px;
+    spacing: 8px;
+    background-color: @bg-alt;
+    border: 1px;
+    border-color: @accent;
+    margin: 0 0 20px 0;
+}
+
+prompt {
+    text-color: @accent;
+    background-color: rgba(137, 180, 250, 0);
+    padding: 4px;
+    margin: 0 0 0 8;
+    vertical-align: 0.5;
+    font: "JetBrainsMono Nerd Font 18";
+}
+
+entry {
+    padding: 8;
+    placeholder: "";
+    text-color: @fg;
+    background-color: @bg-alt;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 8;
+}
+
+element {
+    background-color: transparent;
+    padding: 12px;
+    text-color: @fg-alt;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element-icon {
+    size: 1.2em;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}

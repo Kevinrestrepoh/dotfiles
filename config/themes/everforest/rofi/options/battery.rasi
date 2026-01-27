@@ -1,0 +1,42 @@
+configuration {
+  font: "JetBrainsMono Nerd Font 14";
+}
+
+@theme "/dev/null"
+@import "../colors.rasi"
+
+window {
+    border: 1;
+    border-radius: 12px;
+    width: 15%;
+}
+
+mainbox {
+    spacing: 0;
+    children: [listview];
+}
+
+listview {
+    background-color: transparent;
+    layout: vertical;
+    columns: 1;
+    lines: 3;
+    spacing: 10px;
+    padding: 10px;
+}
+
+element {
+    background-color: transparent;
+    padding: 10px 20px;
+    text-color: @fg;
+}
+
+element selected {
+    text-color: @bg;
+    background-color: @accent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
