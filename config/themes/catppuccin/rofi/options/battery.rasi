@@ -3,21 +3,12 @@ configuration {
 }
 
 @theme "/dev/null"
-
-* {
-    bg: #1e1e2e;
-    bg-alt: #181825;
-    fg: #cdd6f4;
-    fg-alt: #787c99;
-    accent: #cba6f7;
-
-    background-color: @bg;
-}
+@import "../colors.rasi"
 
 window {
     border: 1;
     border-radius: 12px;
-    width: 10%;
+    width: 15%;
 }
 
 mainbox {
@@ -29,7 +20,7 @@ listview {
     background-color: transparent;
     layout: vertical;
     columns: 1;
-    lines: 4;
+    lines: 3;
     spacing: 10px;
     padding: 10px;
 }
