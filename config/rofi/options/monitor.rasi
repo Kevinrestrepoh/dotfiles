@@ -12,16 +12,10 @@ configuration {
     accent: #cba6f7;
 
     background-color: @bg;
-    
-    border: 0;
-    margin: 0;
-    padding: 0;
-    spacing: 0;
 }
 
 window {
     border: 1;
-    border-color: @accent;
     border-radius: 12px;
     width: 15%;
 }

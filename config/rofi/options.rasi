@@ -16,7 +16,6 @@ configuration {
 
 window {
     border: 1;
-    border-color: @accent;
     border-radius: 12px;
     width: 10%;
 }
