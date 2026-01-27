@@ -15,17 +15,10 @@ configuration {
     fg-alt: #787c99;
     accent: #cba6f7;
 
-    background-color: @bg;
-    
-    border: 0;
-    margin: 0;
-    padding: 0;
-    spacing: 0;
+    background-color: @bg-alt;
 }
 
 window {
-    border: 1;
-    border-color: @accent;
     border-radius: 12px;
     width: 14%;
     height: 60px;
@@ -38,14 +31,15 @@ mainbox {
 }
 
 listview {
+    background-color: transparent;
     layout: horizontal;
-    columns: 3;
-    spacing: 12px;
+    fixed-columns: true;
+    spacing: 2%;
 }
 
 element {
-    padding: 10px 20px;
-    background-color: @bg;
+    background-color: transparent;
+    padding: 10px;
     text-color: @fg;
     cursor: pointer;
 }
@@ -55,6 +49,7 @@ element selected {
 }
 
 element-text {
+    background-color: transparent;
     font: inherit;
     text-color: inherit;
     horizontal-align: center;

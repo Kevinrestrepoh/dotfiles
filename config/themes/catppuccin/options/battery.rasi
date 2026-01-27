@@ -26,6 +26,7 @@ mainbox {
 }
 
 listview {
+    background-color: transparent;
     layout: vertical;
     columns: 1;
     lines: 3;
@@ -34,18 +35,17 @@ listview {
 }
 
 element {
+    background-color: transparent;
     padding: 10px 20px;
     text-color: @fg;
-    cursor: pointer;
 }
 
 element selected {
-    text-color: @accent;
+    text-color: @bg;
+    background-color: @accent;
 }
 
 element-text {
-    font: inherit;
+    background-color: transparent;
     text-color: inherit;
-    horizontal-align: center;
-    vertical-align: 0.5;
 }

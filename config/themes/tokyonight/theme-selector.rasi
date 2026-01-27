@@ -17,7 +17,6 @@ configuration {
 window {
     border-radius: 12px;
     width: 45%;
-    height: 30%;
     padding: 15;
 }
 
@@ -28,7 +27,7 @@ inputbar {
 listview {
     background-color: transparent;
     columns: 1;
-    lines: 8;
+    lines: 4;
 }
 
 element {

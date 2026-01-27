@@ -11,17 +11,10 @@ configuration {
     fg-alt: #787c99;
     accent: #cba6f7;
 
-    background-color: @bg;
-    
-    border: 0;
-    margin: 0;
-    padding: 0;
-    spacing: 0;
+    background-color: @bg-alt;
 }
 
 window {
-    border: 1;
-    border-color: @accent;
     border-radius: 12px;
     width: 60%;
     height: 70%;
@@ -46,7 +39,6 @@ element {
     border: 1;
     border-color: @fg-alt;
     border-radius: 6px;
-    orientation: vertical;
 }
 
 element selected {
@@ -63,5 +55,6 @@ element-icon {
 }
 
 element-text {
+    display: none;
     text-color: @fg;
 }

@@ -34,7 +34,7 @@ listview {
     background-color: transparent;
     layout: horizontal;
     fixed-columns: true;
-    spacing: 1.8%;
+    spacing: 2%;
 }
 
 element {
