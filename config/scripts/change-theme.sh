@@ -18,7 +18,8 @@ cp "$THEME_DIR/kitty.conf" "$HOME/.config/kitty/kitty-style.conf"
 
 # Nvim
 CHADRC="$HOME/.config/nvim/lua/chadrc.lua"
-nvim --headless "$CHADRC" +"%s/theme = \".*\"/theme = \"$THEME\"/" +wq
+sed -i -E "s/(theme *= *)\"[^\"]+\"/\1\"$THEME\"/" "$CHADRC"
+nvim --headless +"lua require('base46').compile()" +q
 
 hyprctl reload
 waybar --reload-css

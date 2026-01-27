@@ -35,7 +35,6 @@ listview {
 
 element {
     padding: 10px 20px;
-    background-color: @bg;
     text-color: @fg;
     cursor: pointer;
 }

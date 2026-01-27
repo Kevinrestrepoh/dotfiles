@@ -43,7 +43,7 @@ window#waybar {
 }
 
 #custom-notification {
-  background: rgba(30, 30, 46, 0.7);
+  background: rgba(26, 27, 38, 0.8);
   color: #ff9e64;
   border-radius: 12px;
   padding: 7px 14px 7px 12px;
