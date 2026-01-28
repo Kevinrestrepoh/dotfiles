@@ -10,7 +10,24 @@ case "$choice" in
         ~/.config/scripts/options/battery.sh
         ;;
     *Theme*)
-        THEME=$(ls ~/.config/themes | rofi -dmenu -config ~/.config/rofi/options/theme-selector.rasi)
+        CURRENT_THEME=$(sed -nE 's/.*theme *= *"([^"]+)".*/\1/p' ~/.config/nvim/lua/chadrc.lua)
+        ARROW="▶"
+
+        THEMES="$(
+            for t in ~/.config/themes/*; do
+              name=$(basename "$t")
+              if [[ "$name" == "$CURRENT_THEME" ]]; then
+                  echo "$ARROW $name"
+              else
+                  echo "  $name"
+              fi
+            done
+        )"
+
+        THEME=$(echo "$THEMES" | rofi -dmenu -config ~/.config/rofi/options/theme-selector.rasi)
+
+        THEME=$(echo "$THEME" | sed -E "s/^$ARROW[[:space:]]*//; s/^[[:space:]]+//")
+
         if [ -n "$THEME" ]; then
             ~/.config/scripts/change-theme.sh "$THEME"
         fi
