@@ -8,6 +8,12 @@ window#waybar {
   background: transparent;
 }
 
+#workspaces {
+  background: rgba(54, 62, 68, 0.9);
+  border-radius: 12px;
+  padding: 2px 6px;
+}
+
 #workspaces button {
   color: #656d73;
   padding: 0 5px;
@@ -17,7 +23,9 @@ window#waybar {
 #workspaces button.active {
   color: #83c092;
   background: #83c092;
-  min-width: 32px;
+  min-width: 24px;
+  min-height: 0;
+  margin: 4px 5px;
   border-radius: 999px;
 }
 
@@ -35,65 +43,46 @@ window#waybar {
 }
 
 #custom-date-clock {
-  background: rgba(54, 62, 68, 0.9);
-  color: #dbbc7f;
+  background: #dbbc7f;
+  color: rgba(54, 62, 68, 0.9);
   border-radius: 12px;
-  padding: 7px 10px 7px 16px;
-  margin: 6px 5px;
+  padding: 3px 10px 3px 16px;
 }
 
 #custom-notification {
   background: rgba(54, 62, 68, 0.9);
   color: #e69875;
   border-radius: 12px;
-  padding: 7px 14px 7px 12px;
-  margin: 6px 5px;
+  padding: 3px 14px 3px 12px;
+  margin: 0 6px;
 }
 
-#network {
-  color: #7393b3;
-}
-
-#network.disconnected {
-  color: #e67e80;
-}
-
-#bluetooth {
-  color: #69a59d;
-}
-
-#battery {
-  color: #83c092;
-}
-
-#battery.critical {
-  color: #e67e80;
-}
-
-#backlight {
-  color: #d3c6aa;
-}
-
-#wireplumber {
-  color: #ecafcc;
-}
-
-#wireplumber.muted {
-  color: #e67e80;
-}
-
-.modules-left,
-.modules-center,
-.modules-right, #tray {
+#tray {
   background: rgba(54, 62, 68, 0.9);
   border-radius: 12px;
-  padding: 7px;
-  margin: 6px 5px;
+  padding: 0 8px;
+  margin: 0 6px;
 }
 
-.modules-left {
+#network { color: #7393b3; }
+#network.disconnected { color: #e67e80; font-size: 18px; }
+#bluetooth { color: #69a59d; font-size: 18px; }
+#battery { color: #83c092; }
+#battery.critical { color: #e67e80; }
+#backlight { color: #d3c6aa; }
+#wireplumber { color: #ecafcc; }
+#wireplumber.muted { color: #e67e80; font-size: 18px; }
+
+.modules-right {
+  background: rgba(54, 62, 68, 0.9);
+  border-radius: 12px;
+  padding: 0 4px;
+  margin: 4px 5px 0 5px;
+}
+
+.modules-left, .modules-center {
   background: transparent;
   border-radius: 0px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 4px 5px 0px 5px;
 }

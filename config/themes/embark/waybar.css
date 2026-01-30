@@ -8,6 +8,12 @@ window#waybar {
   background: transparent;
 }
 
+#workspaces {
+  background: rgba(35, 33, 58, 0.75);
+  border-radius: 12px;
+  padding: 2px 6px;
+}
+
 #workspaces button {
   color: #555394;
   padding: 0 5px;
@@ -16,9 +22,6 @@ window#waybar {
 
 #workspaces button.active {
   color: #aaffe4;
-  background: #aaffe4;
-  min-width: 32px;
-  border-radius: 999px;
 }
 
 #tray,
@@ -35,11 +38,10 @@ window#waybar {
 }
 
 #custom-date-clock {
-  background: rgba(35, 33, 58, 0.75);
-  color: #ffe9aa;
+  background: #aaffe4;
+  color: rgba(35, 33, 58, 0.75);
   border-radius: 12px;
   padding: 7px 10px 7px 16px;
-  margin: 6px 5px;
 }
 
 #custom-notification {
@@ -47,56 +49,35 @@ window#waybar {
   color: #f48fb1;
   border-radius: 12px;
   padding: 7px 14px 7px 12px;
-  margin: 6px 5px;
+  margin: 0 5px;
 }
 
-#network {
-  color: #91ddff;
+#tray {
+  background: transparent;
+  border-radius: 12px;
+  padding: 0 8px;
+  margin: 4px 3px;
 }
 
-#network.disconnected {
-  color: #f48fb1;
-  font-size: 18px;
-}
+#network { color: #91ddff; }
+#network.disconnected { color: #f48fb1; font-size: 18px; }
+#bluetooth { color: #aaffe4; font-size: 18px; }
+#battery { color: #a1efd3; }
+#battery.critical { color: #ff5458; }
+#backlight { color: #cbe3e7; }
+#wireplumber { color: #d4bfff; }
+#wireplumber.muted { color: #ff5458; font-size: 18px; }
 
-#bluetooth {
-  color: #aaffe4;
-  font-size: 18px;
-}
-
-#battery {
-  color: #a1efd3;
-}
-
-#battery.critical {
-  color: #ff5458;
-}
-
-#backlight {
-  color: #cbe3e7;
-}
-
-#wireplumber {
-  color: #d4bfff;
-}
-
-#wireplumber.muted {
-  color: #ff5458;
-  font-size: 18px;
-}
-
-.modules-left,
-.modules-center,
-.modules-right, #tray {
+.modules-right {
   background: rgba(35, 33, 58, 0.75);
   border-radius: 12px;
-  padding: 7px;
-  margin: 6px 5px;
+  padding: 0 4px;
+  margin: 6px 5px 0px 5px;
 }
 
-.modules-left {
+.modules-left, .modules-center {
   background: transparent;
   border-radius: 0px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 6px 5px 0px 5px;
 }

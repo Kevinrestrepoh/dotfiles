@@ -1,6 +1,12 @@
 THEME="$1"
 THEME_DIR="$HOME/.config/themes/$THEME"
 
+WAYBAR=false
+if pgrep -x waybar > /dev/null; then
+  killall waybar
+  WAYBAR=true
+fi
+
 # Waybar
 cp "$THEME_DIR/waybar.css" "$HOME/.config/waybar/style.css"
 cp "$THEME_DIR/waybar-config" "$HOME/.config/waybar/config"
@@ -17,5 +23,7 @@ sed -i -E "s/(theme *= *)\"[^\"]+\"/\1\"$THEME\"/" "$CHADRC"
 nvim --headless +"lua require('base46').compile()" +q
 
 hyprctl reload
-waybar --reload-css
+if [ "$WAYBAR" = true ]; then 
+  waybar &
+fi
 killall -SIGUSR1 kitty

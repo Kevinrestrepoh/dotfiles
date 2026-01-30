@@ -50,37 +50,14 @@ window#waybar {
   margin: 6px 5px;
 }
 
-#network {
-  color: #8d9bb3;
-}
-
-#network.disconnected {
-  color: #a67476;
-}
-
-#bluetooth {
-  color: #7aacaa;
-}
-
-#battery {
-  color: #8aa387;
-}
-
-#battery.critical {
-  color: #a67476;
-}
-
-#backlight {
-  color: #e0d6bd;
-}
-
-#wireplumber {
-  color: #b8aad9;
-}
-
-#wireplumber.muted {
-  color: #a67476;
-}
+#network { color: #8d9bb3; }
+#network.disconnected { color: #a67476; font-size: 18px;}
+#bluetooth { color: #7aacaa; font-size: 18px; }
+#battery { color: #8aa387; }
+#battery.critical { color: #a67476; }
+#backlight { color: #e0d6bd; }
+#wireplumber { color: #b8aad9; }
+#wireplumber.muted { color: #a67476; font-size: 18px;}
 
 .modules-left,
 .modules-center,
