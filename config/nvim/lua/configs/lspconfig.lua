@@ -19,6 +19,7 @@ vim.lsp.config("gopls", {
         unusedparams = true,
         nilness = true,
         unusedwrite = true,
+        ST1000 = false,
       },
 
     }
