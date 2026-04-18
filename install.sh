@@ -23,7 +23,7 @@ if ! command -v yay &> /dev/null; then
     rm -rf ~/yay
 fi
 
-yay -S --needed --noconfirm nwg-look github-cli oh-my-posh xdg-desktop-portal-hyprland-git hyprpolkitagent light lazydocker
+yay -S --needed --noconfirm nwg-look github-cli oh-my-posh xdg-desktop-portal-hyprland hyprpolkitagent light lazydocker
 
 # tmux
 sudo pacman -S --noconfirm tmux fzf bat
